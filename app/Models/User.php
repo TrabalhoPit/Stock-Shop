@@ -10,7 +10,7 @@ class User extends Model
 
     use SoftDeletes;
     
-    protected $table = 'user';
+    protected $table = 'users';
 	protected $primaryKey = "id";
     protected $fillable = ['name','email','password','type'];
     public $timestamps = true;
