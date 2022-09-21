@@ -7,6 +7,8 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller
 {
@@ -19,7 +21,14 @@ class LoginController extends Controller
 
     public function validateUser(UserRequest $request)
     {
-        dd("tes");
-        dd($request);
+        $user = DB::table('users')
+            ->where(["email" => $request->input("email")])
+            ->first();
+            
+        if ($user->password === $request->input("password")) {
+            echo json_encode($user);
+        } else {
+            echo json_encode("usuário ou senha incorretos");
+        }
     }
 }
