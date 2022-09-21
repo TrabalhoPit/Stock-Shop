@@ -21,15 +21,13 @@ body {
   width: 40%;
   height: 100%;
   background-color: white;
-}
-@media screen and (max-width: 1000px) {
-  .form-login {
+
+  @media screen and (max-width:1000px) {
     width: 50%;
     height: 80%;
   }
-}
-@media screen and (max-width: 600px) {
-  .form-login {
+
+  @media screen and (max-width:600px) {
     border: solid 1px;
     top: 50%;
     left: 50%;
@@ -90,9 +88,10 @@ input {
   border-radius: 5px;
   color: white;
   transition: 0.2s;
-}
-.button-login:hover {
-  opacity: 0.5;
+
+  &:hover {
+    opacity: 0.5;
+  }
 }
 
 .error {
@@ -106,12 +105,12 @@ input {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("/StockAndShop/public/assets/images/fundo-login.png");
-  width: 60%;
-}
-@media screen and (max-width: 600px) {
-  .container-left {
+
+  @media screen and (max-width:600px) {
     background-image: none;
   }
+
+  width: 60%;
 }
 
 .container-image {
@@ -120,12 +119,12 @@ input {
   left: 0;
   width: 15%;
   margin: 10px 0 0 10px;
-}
-.container-image img {
-  max-width: 100%;
-}
-@media screen and (max-width: 600px) {
-  .container-image {
+
+  img {
+    max-width: 100%;
+  }
+
+  @media screen and (max-width:600px) {
     display: none;
   }
 }
