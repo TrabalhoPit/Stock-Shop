@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    <form class="form-cadastro" method="post" id="form-cadastro" action="cadastro/criar">
+    <form class="form-cadastro" data-form-validate-fixed method="post" id="form-cadastro" action="cadastro/criar">
         @csrf
         <div class="content-form">
             <div class="header-container">

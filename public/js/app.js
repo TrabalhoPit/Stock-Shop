@@ -2068,7 +2068,7 @@ $.extend($.validator.messages, {
   required: "Campo obrigatório!",
   email: "Email inserido de forma incorreta."
 });
-$("form").validate({});
+$("[data-form-validate-fixed]").validate({});
 $("input[data-required]").each(function () {
   $(this).rules("add", {
     required: true

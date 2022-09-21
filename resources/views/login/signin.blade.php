@@ -19,7 +19,7 @@
         </div>
     </div>
 
-    <form class="form-login" method="post" action="">
+    <form class="form-login" data-form-validate-fixed method="post" action="">
         @csrf
         <div class="content-form">
             <div class="header-container">
