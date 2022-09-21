@@ -140,11 +140,19 @@ body {
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("/assets/images/fundo-login.png");
   width: 60%;
 }
+.container-left.login {
+  background-image: url("/assets/images/fundo-login.png");
+}
+.container-left.cadastro {
+  background-image: url("/assets/images/fundo-cadastro.png");
+}
 @media screen and (max-width: 600px) {
-  .container-left {
+  .container-left.login {
+    background-image: none;
+  }
+  .container-left.cadastro {
     background-image: none;
   }
 }

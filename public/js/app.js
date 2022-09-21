@@ -2064,30 +2064,23 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.$ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 window.$ = __webpack_require__(/*! jquery-validation */ "./node_modules/jquery-validation/dist/jquery.validate.js");
-$('#cadastro').on('click', function (e) {
-  e.preventDefault(); // alert('teste');
-
-  $.ajax({
-    method: "POST",
-    headers: {
-      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    },
-    url: "/cadastro/criar",
-    data: {
-      email: $('#email').val(),
-      name: $('#name').val(),
-      password: $('#password').val(),
-      type: $('#type').val()
-    }
-  }).done(function (data) {
-    // alert(data.success);
-    if (data.success) {
-      window.location.reload();
-    }
+$.extend($.validator.messages, {
+  required: "Campo obrigatório!",
+  email: "Email inserido de forma incorreta."
+});
+$("form").validate({});
+$("input[data-required]").each(function () {
+  $(this).rules("add", {
+    required: true
   });
 });
-$('.form-login').on('submit', function (e) {
-  if (!$('.form-login').valid()) {
+$("input[data-email-validate]").each(function () {
+  $(this).rules("add", {
+    email: true
+  });
+});
+$(".form-login").on("submit", function (e) {
+  if (!$(".form-login").valid()) {
     return;
   }
 
@@ -2095,16 +2088,41 @@ $('.form-login').on('submit', function (e) {
   $.ajax({
     method: "POST",
     headers: {
-      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
     },
     url: "/login/validate",
     dataType: "Json",
     data: {
-      email: $('#email').val(),
-      password: $('#password').val()
+      email: $("#email").val(),
+      password: $("#password").val()
     }
   }).done(function (data) {
     if (data.success) {}
+  });
+});
+$("#cadastro").on("click", function (e) {
+  if (!$(".form-cadastro").valid()) {
+    return;
+  }
+
+  e.preventDefault();
+  $.ajax({
+    method: "POST",
+    headers: {
+      "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
+    },
+    url: "/cadastro/criar",
+    data: {
+      email: $("#email").val(),
+      name: $("#name").val(),
+      password: $("#password").val(),
+      type: $("#type").val()
+    }
+  }).done(function (data) {
+    // alert(data.success);
+    if (data.success) {
+      window.location.reload();
+    }
   });
 });
 

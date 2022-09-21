@@ -138,10 +138,23 @@ body {
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("/assets/images/fundo-login.png");
+
+  &.login {
+    background-image: url("/assets/images/fundo-login.png");
+  }
+  
+  &.cadastro {
+    background-image: url("/assets/images/fundo-cadastro.png");
+  }
 
   @media screen and (max-width:600px) {
-    background-image: none;
+    &.login {
+      background-image: none;
+    }
+    
+    &.cadastro {
+      background-image: none;
+    }
   }
 
   width: 60%;

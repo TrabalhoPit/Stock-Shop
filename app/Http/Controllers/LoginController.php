@@ -21,16 +21,12 @@ class LoginController extends Controller
 
     public function validateUser(LoginRequest $request)
     {
-            // dd($request); 
-        $user = DB::select("SELECT * FROM users WHERE email LIKE :email AND password LIKE :password",['email' => $request->input("email"), 'password' => $request->input("password")]);
+        $user = DB::select("SELECT * FROM users WHERE email LIKE :email AND password LIKE :password", ['email' => $request->input("email"), 'password' => $request->input("password")]);
 
-        // dd($user);
-            
         if (count($user) > 0) {
-            echo json_encode($user);
+            echo response()->json(['user' => $user], 200);
         } else {
-            echo json_encode("usuário ou senha incorretos");
+            echo response()->json(['error' => true, "msg" => "Usuario nao encontrado"], 200);
         }
     }
-
 }

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +11,7 @@
 </head>
 
 <body>
-    <div class="container-left">
+    <div class="container-left cadastro">
         <div class="container-image">
             <image src="assets/images/logo.png" />
         </div>
@@ -25,18 +24,17 @@
                 <p>Cadastrar</p>
             </div>
             <div class="input-container">
-                <div class="long-input">
-                    <input name="name" id="name" placeholder="Nome" type="text">
-                    <input name="email" id="email" placeholder="Email" type="text">
-                    <input name="password" id="password" placeholder="Senha" type="password">
-                    <select name="type" id="type" required>
-                                  <option value="1">Vendedor</option>
-                                  <option value="2">Consumidor</option>
-                                </select>
-                </div>
+                <input name="name" id="name" data-required placeholder="Nome" type="text">
+                <input name="email" id="email" data-required data-email-validate placeholder="Email" type="text">
+                <input name="password" id="password" data-required placeholder="Senha" type="password">
+                <select name="type" id="type" data-required required>
+                    <option value="">Selecione um tipo de vendedor</option>
+                    <option value="1">Vendedor</option>
+                    <option value="2">Consumidor</option>
+                </select>
             </div>
             <div class="button-container">
-                <button class="button-login" type="submit" id="cadastro" >Confirmar</button>
+                <button class="button-login" type="submit" id="cadastro">Confirmar</button>
             </div>
         </div>
     </form>

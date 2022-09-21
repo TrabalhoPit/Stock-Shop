@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="container-left">
+    <div class="container-left login">
         <div class="container-image">
             <image src="assets/images/logo.png" />
         </div>
@@ -29,8 +29,8 @@
                 <p>Acesse sua conta</p>
             </div>
             <div class="input-container">
-                <input name="email" id="email" placeholder="Email" type="text">
-                <input name="password" id="password" placeholder="Senha" type="password">
+                <input name="email" id="email" data-required data-email-validate placeholder="Email" type="text">
+                <input name="password" id="password" data-required placeholder="Senha" type="password">
             </div>
             <div class="button-container">
                 <button class="button-login" type="submit" id="login" >Acessar</button>

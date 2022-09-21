@@ -22,10 +22,10 @@ class CadastroController extends Controller
      public function criarUsuario(CadastroRequest $request)
     {   
         $this->dados = $request->validated(); 
-        // dd($this->dados);
+
         $user = new User();
         $user->fill($this->dados);
-        // dd($user);
+        
         $user->save();
 
          return response()->json(['success' => true], 200);
