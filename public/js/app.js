@@ -2064,26 +2064,6 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.$ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 window.$ = __webpack_require__(/*! jquery-validation */ "./node_modules/jquery-validation/dist/jquery.validate.js");
-$(".form-login").validate({
-  rules: {
-    email: {
-      required: true,
-      email: true
-    },
-    password: {
-      required: true
-    }
-  },
-  messages: {
-    email: {
-      required: "Campo obrigatório",
-      email: "Digite um email válido"
-    },
-    password: {
-      required: "Campo obrigatório"
-    }
-  }
-});
 $('#login').on('click', function (e) {
   e.preventDefault(); // alert('teste');
 
@@ -2115,6 +2095,27 @@ $('#cadastro').on('click', function (e) {
       name: $('#name').val(),
       password: $('#password').val(),
       type: $('#type').val()
+    }
+  }).done(function (data) {
+    if (data.success) {}
+  });
+});
+$('.form-login').on('submit', function (e) {
+  if (!$('.form-login').valid()) {
+    return;
+  }
+
+  e.preventDefault();
+  $.ajax({
+    method: "POST",
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+    url: "/login/validate",
+    dataType: "Json",
+    data: {
+      email: $('#email').val(),
+      password: $('#password').val()
     }
   }).done(function (data) {
     if (data.success) {}
