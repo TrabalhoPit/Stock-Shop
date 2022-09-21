@@ -6,8 +6,8 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
-use App\Http\Requests\UserRequest;
-use App\Models\Users;
+use App\Http\Requests\CadastroRequest;
+use App\Models\User;
 
 class CadastroController extends Controller
 {
@@ -19,12 +19,15 @@ class CadastroController extends Controller
     }
 
 
-     public function criarUsuario(UserRequest $request)
+     public function criarUsuario(CadastroRequest $request)
     {   
         $this->dados = $request->validated(); 
-        dd($this->dados);
-        $user = new Users();
+        // dd($this->dados);
+        $user = new User();
+        $user->fill($this->dados);
+        // dd($user);
+        $user->save();
 
-        return view('login.cadastro');
+         return response()->json(['success' => true], 200);
     }
 }

@@ -2064,23 +2064,6 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.$ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 window.$ = __webpack_require__(/*! jquery-validation */ "./node_modules/jquery-validation/dist/jquery.validate.js");
-$('#login').on('click', function (e) {
-  e.preventDefault(); // alert('teste');
-
-  $.ajax({
-    method: "POST",
-    headers: {
-      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    },
-    url: "/login/validate",
-    data: {
-      email: $('#email').val(),
-      senha: $('#senha').val()
-    }
-  }).done(function (data) {
-    if (data.success) {}
-  });
-});
 $('#cadastro').on('click', function (e) {
   e.preventDefault(); // alert('teste');
 
@@ -2097,7 +2080,10 @@ $('#cadastro').on('click', function (e) {
       type: $('#type').val()
     }
   }).done(function (data) {
-    if (data.success) {}
+    // alert(data.success);
+    if (data.success) {
+      window.location.reload();
+    }
   });
 });
 $('.form-login').on('submit', function (e) {

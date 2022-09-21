@@ -6,13 +6,9 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
-use App\Http\Requests\UserRequest;
-<<<<<<< HEAD
-use App\Models\Users;
-=======
+use App\Http\Requests\LoginRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
->>>>>>> d35f5f064309426a67a4ee41365a14fb3c66cf56
 
 class LoginController extends Controller
 {
@@ -23,29 +19,18 @@ class LoginController extends Controller
         return view('login.signin');
     }
 
-<<<<<<< HEAD
-    public function validateUser(Request $request)
-    {   
-        
-        dd($user);
-        dd($request);
-=======
-    public function validateUser(UserRequest $request)
+    public function validateUser(LoginRequest $request)
     {
-        $user = DB::table('users')
-            ->where(["email" => $request->input("email")])
-            ->first();
+            // dd($request); 
+        $user = DB::select("SELECT * FROM users WHERE email LIKE :email AND password LIKE :password",['email' => $request->input("email"), 'password' => $request->input("password")]);
+
+        // dd($user);
             
-        if ($user->password === $request->input("password")) {
+        if (count($user) > 0) {
             echo json_encode($user);
         } else {
             echo json_encode("usuário ou senha incorretos");
         }
->>>>>>> d35f5f064309426a67a4ee41365a14fb3c66cf56
     }
 
-     public function cadastro()
-    {   
-        return view('login.cadastro');
-    }
 }

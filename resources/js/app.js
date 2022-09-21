@@ -2,21 +2,6 @@ require('./bootstrap');
 window.$ = require('jquery')
 window.$ = require('jquery-validation')
 
-    $('#login').on('click', function(e){
-        e.preventDefault();
-        // alert('teste');
-        $.ajax({
-                  method: "POST",
-                  headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                  url: `/login/validate`,
-                  data: { email: $('#email').val(), 
-                          senha: $('#senha').val()  }
-              }).done(function( data ) {
-                    if(data.success){
-                    }
-              });
-    });
-
     $('#cadastro').on('click', function(e){
         e.preventDefault();
         // alert('teste');
@@ -29,7 +14,9 @@ window.$ = require('jquery-validation')
                           password: $('#password').val(), 
                           type: $('#type').val()  }
               }).done(function( data ) {
+                // alert(data.success);
                     if(data.success){
+                        window.location.reload();
                     }
               });
     });
