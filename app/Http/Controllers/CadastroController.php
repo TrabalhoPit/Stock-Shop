@@ -9,24 +9,22 @@ use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
 use App\Models\Users;
 
-class LoginController extends Controller
+class CadastroController extends Controller
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function index()
-    {
-        return view('login.signin');
-    }
-
-    public function validateUser(Request $request)
-    {   
-        
-        dd($user);
-        dd($request);
-    }
-
      public function cadastro()
     {   
+        return view('login.cadastro');
+    }
+
+
+     public function criarUsuario(UserRequest $request)
+    {   
+        $this->dados = $request->validated(); 
+        dd($this->dados);
+        $user = new Users();
+
         return view('login.cadastro');
     }
 }

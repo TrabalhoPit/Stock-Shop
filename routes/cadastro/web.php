@@ -12,5 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-require_once('login/web.php');
-require_once('cadastro/web.php');
+
+    Route::get('/cadastro', "App\Http\Controllers\CadastroController@cadastro");
+    Route::post('/cadastro/criar', "App\Http\Controllers\CadastroController@CriarUsuario");

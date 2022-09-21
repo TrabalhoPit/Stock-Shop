@@ -13,9 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', "App\Http\Controllers\LoginController@index");
-
-Route::prefix('login')->group(function () {
-    Route::get('/home', "App\Http\Controllers\LoginController@index");
-    Route::post('/validate', "App\Http\Controllers\LoginController@validateUser");
-});
+    Route::get('/login', "App\Http\Controllers\LoginController@index");
+    Route::post('/login/validate', "App\Http\Controllers\LoginController@validateUser");

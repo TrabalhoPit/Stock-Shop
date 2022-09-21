@@ -18,3 +18,36 @@ $(".form-login").validate({
         }
     }
 });
+
+
+    $('#login').on('click', function(e){
+        e.preventDefault();
+        // alert('teste');
+        $.ajax({
+                  method: "POST",
+                  headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                  url: `/login/validate`,
+                  data: { email: $('#email').val(), 
+                          senha: $('#senha').val()  }
+              }).done(function( data ) {
+                    if(data.success){
+                    }
+              });
+    });
+
+    $('#cadastro').on('click', function(e){
+        e.preventDefault();
+        // alert('teste');
+        $.ajax({
+                  method: "POST",
+                  headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                  url: `/cadastro/criar`,
+                  data: { email: $('#email').val(), 
+                          name: $('#name').val(), 
+                          password: $('#password').val(), 
+                          type: $('#type').val()  }
+              }).done(function( data ) {
+                    if(data.success){
+                    }
+              });
+    });
