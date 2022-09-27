@@ -8,26 +8,26 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use App\Http\Requests\CadastroRequest;
 use App\Models\User;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CadastroController extends Controller
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-     public function cadastro()
-    {   
+    public function cadastro()
+    {
         return view('login.cadastro');
     }
 
 
-     public function criarUsuario(CadastroRequest $request)
-    {   
-        $this->dados = $request->validated(); 
+    public function criarUsuario(CadastroRequest $request)
+    {
+        $this->dados = $request->validated();
 
         $user = new User();
         $user->fill($this->dados);
-        
-        $user->save();
 
-         return response()->json(['success' => true], 200);
+        $user->save();
+        return response()->json(['success' => true, 'data' => $this->dados], 200);
     }
 }

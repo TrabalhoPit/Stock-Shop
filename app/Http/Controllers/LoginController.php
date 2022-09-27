@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
-use App\Models\User;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class LoginController extends Controller
 {
@@ -24,9 +24,12 @@ class LoginController extends Controller
         $user = DB::select("SELECT * FROM users WHERE email LIKE :email AND password LIKE :password", ['email' => $request->input("email"), 'password' => $request->input("password")]);
 
         if (count($user) > 0) {
-            echo response()->json(['user' => $user], 200);
+            Alert::toast('Você foi logado com sucesso!', 'success');
+            Session(["user" => $user]);
+            return response()->json(['success' => true, 'user' => $user]);
         } else {
-            echo response()->json(['error' => true, "msg" => "Usuario nao encontrado"], 200);
+            Alert::toast('Usuario ou senha inválido!', 'error');
+            return response()->json(['success' => false]);
         }
     }
 }

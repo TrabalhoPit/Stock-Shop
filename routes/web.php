@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 require_once('login/web.php');
 require_once('cadastro/web.php');
+Route::get('/', "App\Http\Controllers\HomeController@index")->name('home');
