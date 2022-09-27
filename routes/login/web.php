@@ -12,6 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-    Route::get('/login', "App\Http\Controllers\LoginController@index");
-    Route::post('/login/validate', "App\Http\Controllers\LoginController@validateUser")->name('login.validate');
 
+Route::get('/login', "App\Http\Controllers\LoginController@index")->name('login.signin');
+Route::post('/login/validate', "App\Http\Controllers\LoginController@validateUser")->name('login.validate');
