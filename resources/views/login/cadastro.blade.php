@@ -8,6 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="css/app.css">
     <title>Stock & Shop</title>
+    <link rel="shortcut icon" href="assets/images/logo-minify.png" type="image/x-icon">
 </head>
 
 <body>

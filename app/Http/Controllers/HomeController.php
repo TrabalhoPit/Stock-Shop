@@ -13,10 +13,9 @@ class HomeController extends Controller
     public function index()
     {
         $user = session('user');
-        if (empty($user)) {
-            return view('login.signin');
-        }
 
-        return view('home', ['name' => $user[0]->name, "type" =>  \App\Models\User::getTypeNameAttribute($user[0]->type)]);
+        $data['isLoggedIn'] = !empty($user);
+
+        return view('home', $data);
     }
 }
