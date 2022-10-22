@@ -38,6 +38,10 @@
                 <div class="container-my-account">
                     <img src="assets/images/icons/my-account.png">
                 </div>
+                <div class="dropdown-content">
+                    <a href="#" class="action-account">Editar Conta</a>
+                    <a href="#" class="action-account">Sair</a>
+                </div>
                 <?php } ?>
             </div>
         </div>
