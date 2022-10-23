@@ -12,10 +12,9 @@ class HomeController extends Controller
 
     public function index()
     {
-        $user = session('user');
-
-        $data['isLoggedIn'] = !empty($user);
-
-        return view('home', $data);
+        $this->data['isLoggedIn'] = $this->verifyIsLoggedIn();
+        $this->data['ccsHeader'] = ['home'];
+        $this->nameTemplate = "home";
+        return $this->renderController();
     }
 }

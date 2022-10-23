@@ -25,11 +25,17 @@ class LoginController extends Controller
 
         if (count($user) > 0) {
             Alert::toast('Você foi logado com sucesso!', 'success');
-            Session(["user" => $user]);
+            Session(["user" => ['email' => $user[0]->email, "password" => $user[0]->password]]);
             return response()->json(['success' => true, 'user' => $user]);
         } else {
             Alert::toast('Usuario ou senha inválido!', 'error');
             return response()->json(['success' => false]);
         }
+    }
+
+    public function disconnectUser()
+    {
+        Session(["user" => null]);
+        return response()->json(['success' => true]);
     }
 }
