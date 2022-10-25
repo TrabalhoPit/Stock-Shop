@@ -21,9 +21,9 @@ class ProdutoController extends Controller
 
     public function create(){
         $user = session('user');
-
-        $data['isLoggedIn'] = !empty($user);
-
-        return view('produto.cadastro', $data);
+        $this->data['isLoggedIn'] = !empty($user);
+        $this->data['ccsHeader'] = ['home'];
+        $this->nameTemplate = "produto.cadastro";
+        return $this->renderController();
     }
 }

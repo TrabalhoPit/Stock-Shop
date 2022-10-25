@@ -11,12 +11,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <?php foreach ($ccsHeader as $cssName) { ?>
-    <link rel="stylesheet" href="css/<?= $cssName ?>.css" type="text/css">
+    <link rel="stylesheet" href="/css/<?= $cssName ?>.css" type="text/css">
     <?php } ?>
-    <link rel="stylesheet" href="css/scroll/index.css">
+    <link rel="stylesheet" href="/css/scroll/index.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Stock & Shop</title>
-    <link rel="shortcut icon" href="assets/images/logo-minify.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/images/logo-minify.png" type="image/x-icon">
 </head>
 
 <body>
