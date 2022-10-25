@@ -12,7 +12,5 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-require_once('login/web.php');
-require_once('cadastro/web.php');
-require_once('my-account/web.php');
-Route::get('/', "App\Http\Controllers\HomeController@index")->name('home');
+
+Route::get('/minha-conta', "App\Http\Controllers\MyAccountController@index")->name('myAccount.details');
