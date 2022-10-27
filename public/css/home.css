@@ -86,10 +86,7 @@ body {
   height: 540px;
   width: 100%;
 }
-.containerInicialProduto{
-  display: flex;
-  width: 100%;
-}
+
 .navBar {
   position: absolute;
   width: 100%;

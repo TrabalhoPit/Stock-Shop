@@ -1,5 +1,5 @@
 @include('layouts/header')
-<div class="containerInicialProduto">
+<div class="containerInicial">
     <div class="navBar">
         <div class="container-logo containers">
             <img src="/assets/images/logo-minify.png" class="logo">
@@ -24,7 +24,17 @@
         </div>
     </div>
 </div>
-<div>
-    
+<div class="bodyProduct">
+    <h1 class="textTitule">Cadastre seu <span class="textColor">Produto</span></h1>
+    <div class="containerImageProduct">
+        <div class="containerImage">
+            <img src="/assets/images/sabonete.jpg">
+        </div>
+    </div>
+</div>
+<div class="containerInformationProduct">
+    <h1 class="textInformation">Informações do Produto</h1>
+    <div class="information">
+    </div>
 </div>
 @include('layouts/footer')
