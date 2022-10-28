@@ -90,7 +90,7 @@ body {
 .navBar {
   position: absolute;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.397) !important;
+  background-color: #DAC5DA !important;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   display: flex;
@@ -278,7 +278,7 @@ body {
 /*BUTTONS NAV BAR*/
 .btnSign {
   color: black;
-  background-color: #D8BFD8;
+  background-color: #BC93BC;
 }
 
 .btnBuscar {
@@ -386,10 +386,34 @@ body {
 /*RESPONSIVIDADE CERTA*/
 @media only screen and (max-width: 792px) {
   .navBar {
-    flex-direction: column;
-    height: 30%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
   }
   .containers {
     width: 100%;
+    margin: 35px;
+    padding: 5px;
+  }
+  .container-logo{
+    display: none;
+  }
+  .container-my-account{
+    height: 55%;
+    margin-right: 55px;
+  }
+  .dropdown-content{
+    margin-right: 65px;
+  }
+  .containerInput{
+    display: flex;
+    justify-content: center;
+  }
+  .container-input{
+    width: 50%;
+    margin-left: 50px;
+  }
+  .inputs{
+    padding-left: 10px;
   }
 }

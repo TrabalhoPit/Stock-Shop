@@ -35,6 +35,9 @@
 <div class="containerInformationProduct">
     <h1 class="textInformation">Informações do Produto</h1>
     <div class="information">
+        <div>
+            
+        </div>
     </div>
 </div>
 @include('layouts/footer')
