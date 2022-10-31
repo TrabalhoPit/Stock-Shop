@@ -41,7 +41,9 @@ class CadastroController extends Controller
         $id = $this->dados['id'];
         unset($this->dados['id']);
         $user = new User();
+        $userSession = session('user');
         $user::findOrFail($id)->update($this->dados);
+        Session(["user" => ["email" => $this->dados['email'], "password" => $userSession['password']]]);
         
         Alert::toast('Usuario editado com sucesso!', 'success');
         return response()->json(['success' => true], 200);
