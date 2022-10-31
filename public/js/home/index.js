@@ -10955,14 +10955,18 @@ var __webpack_exports__ = {};
   !*** ./resources/js/home/index.js ***!
   \************************************/
 window.$ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 3,
-  spaceBetween: 30,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true
-  }
-});
+
+if (typeof Swiper !== "undefined") {
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    }
+  });
+}
+
 $('[data-leave-account]').on("click", function (e) {
   e.preventDefault();
   Swal.fire({

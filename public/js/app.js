@@ -2112,7 +2112,7 @@ $("#cadastro").on("click", function (e) {
       email: $("#email").val(),
       name: $("#name").val(),
       password: $("#password").val()
-    }, _defineProperty(_data, "password", $("#password_check").val()), _defineProperty(_data, "type", $("[name=type]").val()), _data)
+    }, _defineProperty(_data, "password", $("#password_check").val()), _defineProperty(_data, "type", $('input[name=type]:checked').val()), _data)
   }).done(function (data) {
     if (data.success) {
       loginAjax(data.data.email, data.data.password);
@@ -2141,6 +2141,57 @@ function loginAjax(email, password) {
     location.reload();
   });
 }
+
+$("[data-edit-account]").on("click", function (e) {
+  var _data2;
+
+  if (!$("[data-edit-account-form]").valid()) {
+    return;
+  }
+
+  e.preventDefault();
+  $.ajax({
+    method: "POST",
+    headers: {
+      "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
+    },
+    dataType: "json",
+    url: "/usuario/editar",
+    data: (_data2 = {
+      id: $('#id').val(),
+      email: $("#email").val(),
+      name: $("#name").val(),
+      password: $("#password").val()
+    }, _defineProperty(_data2, "password", $("#password_check").val()), _defineProperty(_data2, "type", $('input[name=type]:checked').val()), _data2)
+  }).done(function (data) {
+    if (data.success) {
+      location.reload();
+    }
+  });
+});
+$("[data-edit-password]").on("click", function (e) {
+  if (!$("[data-edit-account-password-form]").valid()) {
+    return;
+  }
+
+  e.preventDefault();
+  $.ajax({
+    method: "POST",
+    headers: {
+      "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
+    },
+    dataType: "json",
+    url: "/usuario/editar/senha",
+    data: {
+      oldPassword: $('#old_password').val(),
+      newPassword: $("#new_password").val()
+    }
+  }).done(function (data) {
+    if (data.success) {
+      location.reload();
+    }
+  });
+});
 
 /***/ }),
 
@@ -32015,6 +32066,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/css/produto.scss":
+/*!************************************!*\
+  !*** ./resources/css/produto.scss ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/css/home.scss":
 /*!*********************************!*\
   !*** ./resources/css/home.scss ***!
@@ -32344,6 +32408,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
+/******/ 			"css/produto": 0,
 /******/ 			"css/home": 0,
 /******/ 			"css/my-account": 0,
 /******/ 			"css/scroll/index": 0,
@@ -32397,11 +32462,12 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/home","css/my-account","css/scroll/index","css/app"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/home","css/my-account","css/scroll/index","css/app"], () => (__webpack_require__("./resources/css/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/home","css/my-account","css/scroll/index","css/app"], () => (__webpack_require__("./resources/css/scroll/index.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/home","css/my-account","css/scroll/index","css/app"], () => (__webpack_require__("./resources/css/my-account.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/home","css/my-account","css/scroll/index","css/app"], () => (__webpack_require__("./resources/css/home.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/produto","css/home","css/my-account","css/scroll/index","css/app"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/produto","css/home","css/my-account","css/scroll/index","css/app"], () => (__webpack_require__("./resources/css/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/produto","css/home","css/my-account","css/scroll/index","css/app"], () => (__webpack_require__("./resources/css/scroll/index.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/produto","css/home","css/my-account","css/scroll/index","css/app"], () => (__webpack_require__("./resources/css/my-account.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/produto","css/home","css/my-account","css/scroll/index","css/app"], () => (__webpack_require__("./resources/css/produto.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/produto","css/home","css/my-account","css/scroll/index","css/app"], () => (__webpack_require__("./resources/css/home.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

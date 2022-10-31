@@ -126,6 +126,7 @@ body {
     width: 100%;
     height: fit-content;
     min-height: 500px;
+    flex-direction: column;
 }
 
 .item-container {
@@ -325,10 +326,15 @@ body {
     align-items: center;
     justify-content: center;
 
-    .logo {
+    a {
         max-width: 50%;
         height: 100%;
+
+        .logo {
+            height: 100%;
+        }
     }
+
 }
 
 /*--------------------------------------------------------------------------------------------------------------------------------------*/
@@ -410,7 +416,20 @@ body {
         height: 30%;
     }
 
+
+    .container-logo {
+        height: 20%
+    }
+
     .containers {
         width: 100%;
+    }
+
+    .container-actions {
+        height: 30%;
+    }
+
+    .container-actions .dropdown-content {
+        bottom: -25%;
     }
 }

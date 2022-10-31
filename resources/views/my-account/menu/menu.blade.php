@@ -1,11 +1,9 @@
 <div class="container-menu">
-    <div class="menus active">
-        <div class="titulo-menu">Minha Conta</div>
-    </div>
-    <div class="menus">
-        <div class="titulo-menu">Editar Conta</div>
-    </div>
-    <div class="menus">
-        <div class="titulo-menu">Mudar Senha</div>
-    </div>
+    <?php foreach ($accountMenu as $menu){ ?>
+    <a href="<?= $menu['url'] ?>">
+        <div class="menus <?= $menu['active'] ? 'active' : '' ?>">
+            <div class="titulo-menu"><?= $menu['name'] ?></div>
+        </div>
+    </a>
+    <?php } ?>
 </div>
