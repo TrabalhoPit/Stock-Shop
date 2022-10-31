@@ -52,6 +52,11 @@ body {
 .container-menu .menus .titulo-menu {
   font-size: 26px;
 }
+@media screen and (max-width: 600px) {
+  .container-menu .menus .titulo-menu {
+    font-size: 14px !important;
+  }
+}
 .container-menu .menus:hover {
   height: 11%;
 }
@@ -73,6 +78,11 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 26px;
+}
+@media screen and (max-width: 600px) {
+  .container-titulo {
+    font-size: 18px !important;
+  }
 }
 
 .edit {

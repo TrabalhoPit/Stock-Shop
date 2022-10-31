@@ -55,6 +55,10 @@ body {
 
         .titulo-menu {
             font-size: 26px;
+
+            @media screen and (max-width: 600px) {
+                font-size: 14px !important;
+            }
         }
 
         &:hover {
@@ -81,6 +85,10 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 26px;
+
+    @media screen and (max-width: 600px) {
+        font-size: 18px !important;
+    }    
 }
 
 .info {}
