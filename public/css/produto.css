@@ -222,7 +222,16 @@
     flex-direction: row;
     height: 30%;
   }
+  .container-logo {
+    height: 20%;
+  }
   .containers {
     width: 100%;
+  }
+  .container-actions {
+    height: 30%;
+  }
+  .container-actions .dropdown-content {
+    bottom: -25%;
   }
 }

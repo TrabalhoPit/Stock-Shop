@@ -80,7 +80,7 @@ body {
   display: flex;
   background-image: url("../../assets/images/background-home.png");
   -webkit-backdrop-filter: brightness(50%);
-          backdrop-filter: brightness(50%);
+  backdrop-filter: brightness(50%);
   background-size: cover;
   background-repeat: no-repeat;
   height: 540px;
@@ -92,7 +92,7 @@ body {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.397) !important;
   -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -216,7 +216,7 @@ body {
 /*--------------------------------------------------------------------------------------------------------------------------------------*/
 .img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: 100%;
   width: 100%;
 }
@@ -316,10 +316,12 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .container-logo a {
   max-width: 50%;
   height: 100%;
 }
+
 .container-logo a .logo {
   height: 100%;
 }
@@ -342,6 +344,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .container-actions .dropdown-content {
   background-color: white;
   position: absolute;
@@ -353,16 +356,19 @@ body {
   align-items: center;
   flex-direction: column;
 }
+
 .container-actions .dropdown-content .action-account {
   padding: 0 15px;
   text-decoration: none;
   color: #000;
   transition: 0.5s;
 }
+
 .container-actions .dropdown-content .action-account:hover {
   opacity: 0.7;
   color: rgb(173, 125, 173);
 }
+
 .container-actions:hover > .dropdown-content {
   display: flex;
 }
@@ -381,6 +387,7 @@ body {
   background-color: #ffffff;
   border-radius: 15px;
 }
+
 .container-my-account img {
   height: 100%;
 }
@@ -390,19 +397,41 @@ body {
 /*RESPONSIVIDADE CERTA*/
 @media only screen and (max-width: 792px) {
   .navBar {
-    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
     height: 30%;
   }
   .container-logo {
     height: 20%;
   }
   .containers {
+    margin: 30px;
     width: 100%;
   }
   .container-actions {
     height: 30%;
   }
   .container-actions .dropdown-content {
-    bottom: -25%;
+    bottom: -10%;
+    margin-right: 30px;
+  }
+  .container-input {
+    padding-right: 20px;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .container-logo {
+    display: none;
+  }
+}
+@media only screen and (max-width: 484px) {
+  .containerInput {
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+  }
+  .container-input {
+    padding-right: 5px;
   }
 }

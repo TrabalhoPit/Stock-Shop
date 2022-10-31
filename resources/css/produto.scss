@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap);
-@charset "UTF-8";
+// @charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -212,13 +212,22 @@
 
 /*------------------------------------------------------------------------------------*/
 @media only screen and (max-width: 792px) {
-  .navBar {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    height: 30%;
-  }
-  .containers {
-    width: 100%;
-  }
+    .navBar {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      height: 30%;
+    }
+    .container-logo {
+      height: 20%;
+    }
+    .containers {
+      width: 100%;
+    }
+    .container-actions {
+      height: 30%;
+    }
+    .container-actions .dropdown-content {
+      bottom: -25%;
+    }
 }
