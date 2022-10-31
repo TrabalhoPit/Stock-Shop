@@ -19,4 +19,5 @@ mix.js('resources/js/app.js', 'public/js')
 .sass('resources/css/app.scss', 'public/css')
 .sass('resources/css/scroll/index.scss', 'public/css/scroll')
 .sass('resources/css/my-account.scss', 'public/css')
+.sass('resources/css/produto.scss', 'public/css')
 .sass('resources/css/home.scss', 'public/css');

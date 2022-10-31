@@ -3,7 +3,7 @@
 <div class="containerInicial">
     <div class="navBar">
         <div class="container-logo containers">
-            <img src="assets/images/logo-minify.png" class="logo">
+            <a href="{{ route('home') }}"><img src="/assets/images/logo-minify.png" class="logo"></a>
         </div>
         <div class="container-input containers">
             <div class="containerInput">
@@ -31,84 +31,37 @@
 </div>
 <div class="menu">
     <div class="item-container">
+        <?php if (!empty($products)) { ?>
         <div class="container-titulo">
             <h1>Maquiagens mais vendidas</h1>
         </div>
         <div class="carrosel-item swiper mySwiper">
             <div class="container-item swiper-wrapper">
+                <?php foreach ($products as $product) { ?>
                 <div class="swiper-slide">
-                    <img src="assets/images/make.png" class="img">
+                    <img src="assets/images/produtos/<?= $product->image ?>" class="img">
                     <div class="divDescription">
-                        <h2 class="tituloProduto">Kit de Maquiagem Eudora</h2>
+                        <h2 class="tituloProduto"><?= $product->name ?></h2>
                         <div class="containerDescription">
-                            <h3>Vendedor: Luiza Pereira</h3>
-                            <h4>Preço: R$100,00</h4>
+                            <h3>Vendedor: <?= $product->seller->name ?></h3>
+                            <h4>Preço: <?= $product->priceFormat() ?></h4>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide">
-                    <div class="divDescription">
-                        <h2 class="tituloProduto">Kit de Maquiagem Eudora</h2>
-                        <div class="containerDescription">
-                            <h3>Vendedor: Luiza Pereira</h3>
-                            <h4>Preço: R$100,00</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="divDescription">
-                        <h2 class="tituloProduto">Kit de Maquiagem Eudora</h2>
-                        <div class="containerDescription">
-                            <h3>Vendedor: Luiza Pereira</h3>
-                            <h4>Preço: R$100,00</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="divDescription">
-                        <h2 class="tituloProduto">Kit de Maquiagem Eudora</h2>
-                        <div class="containerDescription">
-                            <h3>Vendedor: Luiza Pereira</h3>
-                            <h4>Preço: R$100,00</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="divDescription">
-                        <h2 class="tituloProduto">Kit de Maquiagem Eudora</h2>
-                        <div class="containerDescription">
-                            <h3>Vendedor: Luiza Pereira</h3>
-                            <h4>Preço: R$100,00</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="divDescription">
-                        <h2 class="tituloProduto">Kit de Maquiagem Eudora</h2>
-                        <div class="containerDescription">
-                            <h3>Vendedor: Luiza Pereira</h3>
-                            <h4>Preço: R$100,00</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="divDescription">
-                        <h2 class="tituloProduto">Kit de Maquiagem Eudora</h2>
-                        <div class="containerDescription">
-                            <h3>Vendedor: Luiza Pereira</h3>
-                            <h4>Preço: R$100,00</h4>
-                        </div>
-                    </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
+
+        <?php } ?>
+    </div>
+    <div class="item-container">
         <div class="container-titulo">
             <h1>Cosméticos mais vendidos</h1>
         </div>
         <div class="carrosel-item swiper mySwiper">
             <div class="container-item swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="assets/images/make.png" class="img">
+                    <img src="assets/images/produtos/make.png" class="img">
                     <div class="divDescription">
                         <h2 class="tituloProduto">Kit de Maquiagem Eudora</h2>
                         <div class="containerDescription">

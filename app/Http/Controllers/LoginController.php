@@ -16,7 +16,9 @@ class LoginController extends Controller
 
     public function index()
     {
-        return view('login.signin');
+        $this->data['ccsHeader'] = ['app'];
+        $this->nameTemplate = 'login.signin';
+        return $this->renderController();
     }
 
     public function validateUser(LoginRequest $request)

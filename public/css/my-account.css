@@ -35,6 +35,10 @@ body {
 .container-menu .active .titulo-menu {
   color: rgb(173, 125, 173);
 }
+.container-menu a {
+  text-decoration: none;
+  color: #000;
+}
 .container-menu .menus {
   cursor: pointer;
   display: flex;
@@ -69,4 +73,83 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 26px;
+}
+
+.edit {
+  margin-right: 30px;
+  border-radius: 15px;
+  padding: 15px;
+  border: 1px solid #000;
+}
+
+.information {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.value-input {
+  border-radius: 5px;
+  padding: 0 5px;
+  margin: 5px 0;
+  width: 120%;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 25px 0 15px 0;
+  transition: 0.5s;
+  border: none;
+  border-bottom: 1px solid;
+}
+.value-input:focus-visible {
+  outline: none;
+  border-color: #DAC5DA;
+}
+
+.titulo-informacao {
+  width: 100%;
+  text-align: center;
+}
+
+.container-radio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.container-radio .each-radio {
+  margin: 5px 10px;
+}
+.container-radio .each-radio label {
+  margin: 0 15px 0 10px;
+  cursor: pointer;
+}
+
+.row-double,
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row-double .row {
+  margin: 10px 15px;
+}
+
+.button-edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-edit button {
+  background: #DAC5DA !important;
+  padding: 5px;
+  border-radius: 15px;
+  color: #000;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.button-edit button:hover {
+  padding: 7px;
 }

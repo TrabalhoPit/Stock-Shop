@@ -90,7 +90,7 @@ body {
 .navBar {
   position: absolute;
   width: 100%;
-  background-color: #DAC5DA !important;
+  background-color: rgba(0, 0, 0, 0.397) !important;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   display: flex;
@@ -115,6 +115,7 @@ body {
   height: -moz-fit-content;
   height: fit-content;
   min-height: 500px;
+  flex-direction: column;
 }
 
 .item-container {
@@ -278,7 +279,7 @@ body {
 /*BUTTONS NAV BAR*/
 .btnSign {
   color: black;
-  background-color: #BC93BC;
+  background-color: #D8BFD8;
 }
 
 .btnBuscar {
@@ -315,8 +316,11 @@ body {
   align-items: center;
   justify-content: center;
 }
-.container-logo .logo {
+.container-logo a {
   max-width: 50%;
+  height: 100%;
+}
+.container-logo a .logo {
   height: 100%;
 }
 
@@ -386,34 +390,19 @@ body {
 /*RESPONSIVIDADE CERTA*/
 @media only screen and (max-width: 792px) {
   .navBar {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
+    height: 30%;
+  }
+  .container-logo {
+    height: 20%;
   }
   .containers {
     width: 100%;
-    margin: 35px;
-    padding: 5px;
   }
-  .container-logo{
-    display: none;
+  .container-actions {
+    height: 30%;
   }
-  .container-my-account{
-    height: 55%;
-    margin-right: 55px;
-  }
-  .dropdown-content{
-    margin-right: 65px;
-  }
-  .containerInput{
-    display: flex;
-    justify-content: center;
-  }
-  .container-input{
-    width: 50%;
-    margin-left: 50px;
-  }
-  .inputs{
-    padding-left: 10px;
+  .container-actions .dropdown-content {
+    bottom: -25%;
   }
 }

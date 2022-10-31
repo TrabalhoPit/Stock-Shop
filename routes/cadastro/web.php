@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/cadastro', "App\Http\Controllers\CadastroController@cadastro")->name("signup");
 Route::post('/cadastro/criar', "App\Http\Controllers\CadastroController@CriarUsuario");
+Route::post('/usuario/editar', "App\Http\Controllers\CadastroController@editUser");

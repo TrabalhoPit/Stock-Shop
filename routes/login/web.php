@@ -14,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/login', "App\Http\Controllers\LoginController@index")->name('login.signin');
-Route::get('/disconnect', "App\Http\Controllers\LoginController@disconnectUser")->name('login.disconnect');
+Route::post('/disconnect', "App\Http\Controllers\LoginController@disconnectUser")->name('login.disconnect');
 Route::post('/login/validate', "App\Http\Controllers\LoginController@validateUser")->name('login.validate');

@@ -1,14 +1,15 @@
 window.$ = require("jquery");
 
-const swiper = new Swiper(".mySwiper", {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-});
-
+if (typeof Swiper !== "undefined") {
+    const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+}
 
 $('[data-leave-account]').on("click", function (e) {
     e.preventDefault();

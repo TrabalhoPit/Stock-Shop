@@ -45,7 +45,7 @@ $("#cadastro").on("click", function (e) {
             name: $("#name").val(),
             password: $("#password").val(),
             password: $("#password_check").val(),
-            type: $("[name=type]").val(),
+            type: $('input[name=type]:checked').val(),
         },
     }).done(function (data) {
         if (data.success) {
@@ -74,3 +74,53 @@ function loginAjax(email, password) {
         location.reload();
     });
 }
+
+$("[data-edit-account]").on("click", function (e) {
+    if (!$("[data-edit-account-form]").valid()) {
+        return;
+    }
+    e.preventDefault();
+    $.ajax({
+        method: "POST",
+        headers: {
+            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+        },
+        dataType: "json",
+        url: `/usuario/editar`,
+        data: {
+            id: $('#id').val(),
+            email: $("#email").val(),
+            name: $("#name").val(),
+            password: $("#password").val(),
+            password: $("#password_check").val(),
+            type: $('input[name=type]:checked').val(),
+        },
+    }).done(function (data) {
+        if (data.success) {
+            location.reload();
+        }
+    });
+});
+
+$("[data-edit-password]").on("click", function (e) {
+    if (!$("[data-edit-account-password-form]").valid()) {
+        return;
+    }
+    e.preventDefault();
+    $.ajax({
+        method: "POST",
+        headers: {
+            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+        },
+        dataType: "json",
+        url: `/usuario/editar/senha`,
+        data: {
+            oldPassword: $('#old_password').val(),
+            newPassword: $("#new_password").val(),
+        },
+    }).done(function (data) {
+        if (data.success) {
+            location.reload();
+        }
+    });
+});
