@@ -18,6 +18,7 @@ class CreateProducts extends Migration
             $table->string('name');
             $table->string('image');
             $table->string('description');
+            $table->integer('quantity');
             $table->double('price');
             $table->unsignedBigInteger('seller_id', false);
             $table->foreign('seller_id')->references('id')->on('users');

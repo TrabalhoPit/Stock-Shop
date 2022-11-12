@@ -38,8 +38,8 @@
         <div class="carrosel-item swiper mySwiper">
             <div class="container-item swiper-wrapper">
                 <?php foreach ($products as $product) { ?>
-                <div class="swiper-slide">
-                    <img src="assets/images/produtos/<?= $product->image ?>" class="img">
+                <div class="swiper-slide" data-product-click="<?= $product->id ?>">
+                    <img src="/assets/images/produtos/<?= $product->image ?>" class="img">
                     <div class="divDescription">
                         <h2 class="tituloProduto"><?= $product->name ?></h2>
                         <div class="containerDescription">
@@ -61,7 +61,7 @@
         <div class="carrosel-item swiper mySwiper">
             <div class="container-item swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="assets/images/produtos/make.png" class="img">
+                    <img src="/assets/images/produtos/make.png" class="img">
                     <div class="divDescription">
                         <h2 class="tituloProduto">Kit de Maquiagem Eudora</h2>
                         <div class="containerDescription">
@@ -128,6 +128,8 @@
         </div>
     </div>
 </div>
+@include('modal/product')
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="js/home/index.js"></script>
+<script src="js/modal/product.js"></script>
 @include('layouts/footer')

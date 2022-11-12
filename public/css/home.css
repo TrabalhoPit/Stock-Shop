@@ -257,7 +257,6 @@ body {
 /*--------------------------------------------------------------------------------------------------------------------------------------*/
 /*CONFIGURAÇÕES DOS INPUTS*/
 .inputs {
-  width: 55vw;
   padding-left: 10px;
   border: none;
   background-color: transparent;
@@ -269,6 +268,7 @@ body {
 }
 
 .containerInput {
+  width: 100%;
   background-color: whitesmoke;
   border: solid 2px white;
   border-radius: 7px 7px 7px 7px;
@@ -318,11 +318,11 @@ body {
 }
 
 .container-logo a {
-  max-width: 50%;
   height: 100%;
 }
 
 .container-logo a .logo {
+  max-width: 100%;
   height: 100%;
 }
 
@@ -397,41 +397,30 @@ body {
 /*RESPONSIVIDADE CERTA*/
 @media only screen and (max-width: 792px) {
   .navBar {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    height: 30%;
-  }
-  .container-logo {
-    height: 20%;
-  }
-  .containers {
-    margin: 30px;
-    width: 100%;
+    display: grid;
+    grid-template-areas: "input input" "logo actions";
+    gap: 10px;
+    height: 25%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 45% 45%;
+    justify-items: center;
   }
   .container-actions {
-    height: 30%;
+    grid-area: actions;
+    width: 100%;
+    height: 80%;
   }
   .container-actions .dropdown-content {
-    bottom: -10%;
-    margin-right: 30px;
+    bottom: -24%;
   }
-  .container-input {
-    padding-right: 20px;
-  }
-}
-@media only screen and (max-width: 550px) {
   .container-logo {
-    display: none;
-  }
-}
-@media only screen and (max-width: 484px) {
-  .containerInput {
-    display: flex;
-    flex-direction: center;
-    justify-content: center;
+    grid-area: logo;
+    width: 100%;
+    height: 80%;
   }
   .container-input {
-    padding-right: 5px;
+    margin-top: 20px;
+    grid-area: input;
+    width: 80%;
   }
 }

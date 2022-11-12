@@ -14,10 +14,9 @@ class HomeController extends Controller
     public function index()
     {
         $this->data['isLoggedIn'] = $this->verifyIsLoggedIn();
-        $this->data['ccsHeader'] = ['home'];
+        $this->data['ccsHeader'] = ['home', 'modal/modal-product'];
         $productModel = new Product;
         $this->data['products'] = $productModel->getLimited(8);
-        // dd($this->data['products']);
         $this->nameTemplate = "home";
         return $this->renderController();
     }

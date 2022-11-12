@@ -32027,6 +32027,19 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
+/***/ "./resources/css/home.scss":
+/*!*********************************!*\
+  !*** ./resources/css/home.scss ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/css/app.scss":
 /*!********************************!*\
   !*** ./resources/css/app.scss ***!
@@ -32079,10 +32092,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/css/home.scss":
-/*!*********************************!*\
-  !*** ./resources/css/home.scss ***!
-  \*********************************/
+/***/ "./resources/css/modal/modal-product.scss":
+/*!************************************************!*\
+  !*** ./resources/css/modal/modal-product.scss ***!
+  \************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -32409,10 +32422,11 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
 /******/ 			"css/produto": 0,
-/******/ 			"css/home": 0,
+/******/ 			"css/modal/modal-product": 0,
 /******/ 			"css/my-account": 0,
 /******/ 			"css/scroll/index": 0,
-/******/ 			"css/app": 0
+/******/ 			"css/app": 0,
+/******/ 			"css/home": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -32462,12 +32476,13 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/produto","css/home","css/my-account","css/scroll/index","css/app"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/produto","css/home","css/my-account","css/scroll/index","css/app"], () => (__webpack_require__("./resources/css/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/produto","css/home","css/my-account","css/scroll/index","css/app"], () => (__webpack_require__("./resources/css/scroll/index.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/produto","css/home","css/my-account","css/scroll/index","css/app"], () => (__webpack_require__("./resources/css/my-account.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/produto","css/home","css/my-account","css/scroll/index","css/app"], () => (__webpack_require__("./resources/css/produto.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/produto","css/home","css/my-account","css/scroll/index","css/app"], () => (__webpack_require__("./resources/css/home.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/produto","css/modal/modal-product","css/my-account","css/scroll/index","css/app","css/home"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/produto","css/modal/modal-product","css/my-account","css/scroll/index","css/app","css/home"], () => (__webpack_require__("./resources/css/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/produto","css/modal/modal-product","css/my-account","css/scroll/index","css/app","css/home"], () => (__webpack_require__("./resources/css/scroll/index.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/produto","css/modal/modal-product","css/my-account","css/scroll/index","css/app","css/home"], () => (__webpack_require__("./resources/css/my-account.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/produto","css/modal/modal-product","css/my-account","css/scroll/index","css/app","css/home"], () => (__webpack_require__("./resources/css/produto.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/produto","css/modal/modal-product","css/my-account","css/scroll/index","css/app","css/home"], () => (__webpack_require__("./resources/css/modal/modal-product.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/produto","css/modal/modal-product","css/my-account","css/scroll/index","css/app","css/home"], () => (__webpack_require__("./resources/css/home.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
