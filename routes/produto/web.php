@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/produto/cadastro', "App\Http\Controllers\ProdutoController@create")->name('produto.create');
+Route::get('/produto/detalhe/{id}', "App\Http\Controllers\ProdutoController@getProductById")->name('produto.getById');
