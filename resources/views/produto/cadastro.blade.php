@@ -39,9 +39,34 @@
 <div class="containerInformationProduct">
     <h1 class="textInformation">Informações do Produto</h1>
     <div class="information">
-        <div>
-
+        <div class="containerLabel">
+            <label class="textLabel">Nome do Produto:</label>
+            <input type="text" class="inputsInformationNome">
         </div>
+        <div class="containerLabel">
+            <label class="textLabel">Quant. em Estoque:</label>
+            <input type="number" class="inputsInformationEstoque">
+        </div>
+        <div class="containerLabel">
+            <label class="textLabel">Marca do Produto:</label>
+            <input type="text" class="inputsInformationMarca" placeholder="Ex: Natura, Boticário, Eudora, etc...">
+        </div>
+        <div class="containerLabel">
+            <label class="textLabel">Categoria:</label>
+            <input type="text" class="inputsInformationCategoria">
+        </div>
+        <div class="containerLabelValor">
+            <label class="textLabel">Valor do Produto:</label>
+            <input type="number" class="inputsInformationValor">
+        </div>
+        <div class="containerLabel">
+            <label class="textLabel">Descrição:</label>
+            <input type="text" class="inputsInformationDescription">
+        </div>
+    </div>
+    <div class=containerButtons>
+        <button class="btnSalvarProduct">Salvar</button>
+        <button class="btnLimpar">Limpar</button>
     </div>
 </div>
 <script src="/js/home/index.js"></script>
