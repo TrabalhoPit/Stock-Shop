@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap);
 * {
   padding: 0;
   margin: 0;
@@ -13,7 +14,7 @@ body {
   height: 100%;
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -65,24 +66,36 @@ body {
 }
 
 .container-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 50vh;
+  margin-top: 5vh;
   height: 100%;
   width: 70%;
-  position: absolute;
-  bottom: 0;
-  right: 0;
 }
 
 .container-titulo {
-  height: 20%;
   display: flex;
+  height: 20%;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
   justify-content: center;
   align-items: center;
-  font-size: 26px;
 }
 @media screen and (max-width: 600px) {
   .container-titulo {
-    font-size: 18px !important;
+    font-size: 15px !important;
   }
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .edit {
@@ -96,8 +109,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  margin: 10px;
+  margin-top: 40px;
 }
 
 .value-input {
@@ -119,7 +131,22 @@ body {
 
 .titulo-informacao {
   width: 100%;
+  margin-right: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
   text-align: center;
+}
+
+.value-informacao {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin-left: 15px;
+  width: 100%;
 }
 
 .container-radio {
