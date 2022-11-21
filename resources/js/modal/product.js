@@ -1,3 +1,4 @@
+window.$ = require("jquery");
 
 $("[data-product-click]").on("click", function (e) {
     e.preventDefault();
@@ -31,4 +32,33 @@ $("[data-product-click]").on("click", function (e) {
 $('[data-close-modal-product]').on('click', function (e) {
     $("[data-modal-product]").fadeOut("slow", 0);
     $("body").css("overflow", "visible");
+})
+
+$('#cadastro-produto').on('click', function(e){
+    // alert('flinstons');
+     e.preventDefault();
+    $.ajax({
+        method: "POST",
+        headers: {
+            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+        },
+        url: `/produto/create`,
+        data: { name: $('#name').val(), 
+                quantity: $('#quantity').val(),
+                marca: $('#marca').val(),
+                category: $('#category').val(),
+                price: $('#price').val(),
+                description: $('#description').val()  }
+    }).done(function (data) {
+        if (data.success) {
+            Swal.fire({
+        title: 'Produto cadastrado com sucesso!',
+        icon: 'success',
+        showCancelButton: false,
+        timer: 3000,
+    }).then((result) => {
+        window.location.reload();
+    })
+        }
+    });
 })

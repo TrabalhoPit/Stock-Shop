@@ -41,4 +41,4 @@ $('[data-leave-account]').on("click", function (e) {
             });
         }
     })
-})
+});

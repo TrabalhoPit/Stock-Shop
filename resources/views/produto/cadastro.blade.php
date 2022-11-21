@@ -28,6 +28,8 @@
         </div>
     </div>
 </div>
+<form class="form form-cadastro-produto" data-form-validate-fixed method="post" id="form-cadastro-produto" action="create">
+    @csrf
 <div class="bodyProduct">
     <h1 class="textTitule">Cadastre seu <span class="textColor">Produto</span></h1>
     <div class="containerImageProduct">
@@ -41,33 +43,34 @@
     <div class="information">
         <div class="containerLabel">
             <label class="textLabel">Nome do Produto:</label>
-            <input type="text" class="inputsInformationNome">
+            <input type="text" id="name" name="name" class="inputsInformationNome">
         </div>
         <div class="containerLabel">
             <label class="textLabel">Quant. em Estoque:</label>
-            <input type="number" class="inputsInformationEstoque">
+            <input type="number" id="quantity" name="quantity" class="inputsInformationEstoque">
         </div>
         <div class="containerLabel">
             <label class="textLabel">Marca do Produto:</label>
-            <input type="text" class="inputsInformationMarca" placeholder="Ex: Natura, Boticário, Eudora, etc...">
+            <input type="text" id="marca" name="marca" class="inputsInformationMarca" placeholder="Ex: Natura, Boticário, Eudora, etc...">
         </div>
         <div class="containerLabel">
             <label class="textLabel">Categoria:</label>
-            <input type="text" class="inputsInformationCategoria">
+            <input type="text" id="category" name="category" class="inputsInformationCategoria">
         </div>
         <div class="containerLabelValor">
             <label class="textLabel">Valor do Produto:</label>
-            <input type="number" class="inputsInformationValor">
+            <input type="number" id="price" name="price" class="inputsInformationValor">
         </div>
         <div class="containerLabel">
             <label class="textLabel">Descrição:</label>
-            <input type="text" class="inputsInformationDescription">
+            <input type="text" id="description" name="description"class="inputsInformationDescription">
         </div>
     </div>
+</form>
     <div class=containerButtons>
-        <button class="btnSalvarProduct">Salvar</button>
+        <button class="btnSalvarProduct"  id="cadastro-produto">Salvar</button>
         <button class="btnLimpar">Limpar</button>
     </div>
 </div>
-<script src="/js/home/index.js"></script>
+<script src="/js/modal/product.js"></script>
 @include('layouts/footer')
