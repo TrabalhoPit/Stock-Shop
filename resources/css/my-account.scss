@@ -91,6 +91,7 @@ body {
     font-family: "Poppins", sans-serif;
     font-size: 20px;
     font-weight: 600;
+    margin-bottom: 40px;
     justify-content: center;
     align-items: center;
 
@@ -104,20 +105,32 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    box-shadow: 4px 4px 5px 3px rgba(19, 19, 19, 0.541);
+    border-radius: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
 }
 
 .edit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin-right: 30px;
     border-radius: 15px;
+    width: 500px;
     padding: 15px;
-    border: 1px solid #000;
+    box-shadow: 4px 4px 5px 3px rgba(19, 19, 19, 0.541);
 }
 
 .information {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-top: 40px;
+    margin-top: 20px;
+    padding: 15px;
+    // margin-bottom: 20px;
+    width: 100%;
 }
 
 .value-input {
@@ -129,22 +142,53 @@ body {
     padding: 5px 10px;
     margin: 25px 0 15px 0;
     transition: 0.5s;
-    border: none;
-    border-bottom: 1px solid;
+    border: solid #DAC5DA 2px;
 
     &:focus-visible {
         outline: none;
-        border-color: #DAC5DA;
+        border-color: #a37ea3;
+    }
+}
+
+.row-password{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.value-input-passoword{
+    border-radius: 5px;
+    padding: 0 5px;
+    margin: 5px 0;
+    width: 80%;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 25px 0 15px 0;
+    transition: 0.5s;
+    border: solid #DAC5DA 2px;
+
+    &:focus-visible {
+        outline: none;
+        border-color: #a37ea3;
     }
 }
 
 .titulo-informacao {
-    width: 100%;
+    width: 300px;
+    text-align: end;
     margin-right: 20px;
     font-family: "Poppins", sans-serif;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 400;
-    text-align: center;
+}
+
+.titulo-informacao-edit{
+    font-family: "Poppins", sans-serif;
+    font-size:25px;
+    font-weight: 400;
+    text-align: end;
+    margin-right: 15px;
 }
 
 .value-informacao{
@@ -153,7 +197,7 @@ body {
     font-weight: 300;
     width: max-content;
     margin-left: 15px;
-    width: 100%;
+    width: 300px;
     // border: solid red 2px;
 }
 
@@ -162,22 +206,90 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    width: 120%;
 
     .each-radio {
         margin: 5px 10px;
+        display: flex;
 
         label {
             margin: 0 15px 0 10px;
             cursor: pointer;
         }
     }
+    
+    input[type="radio"] {
+        /* Add if not using autoprefixer */
+        -webkit-appearance: none;
+        /* Remove most all native input styles */
+        appearance: none;
+        /* For iOS < 15 */
+        background-color: #e0e0e0;
+        /* Not removed via appearance */
+        margin: 0;
+     
+        font: inherit;
+        color: currentColor;
+        width: 1em;
+        height: 1em;
+        border: 1px solid rgba(128, 128, 128, 0.445);
+        border-radius: 100%;
+        transform: translateY(-0.075em);
+     
+    
+        display: grid;
+        place-content: center;
+     
+        margin-right: 5px;
+        cursor: pointer;
+    }
+    
+    input[type="radio"]:checked {
+        border:  solid 2px #a078a0;
+    }
+     
+    input[type="radio"]::before {
+        content: "";
+        width: 0.9em;
+        height: 0.9em;
+        clip-path: circle(30%);
+        transform: scale(0);
+        transform-origin: bottom left;
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em var(--form-control-color);
+        /* Windows High Contrast Mode */
+        background-color: #a078a0;
+        display: flex;
+        align-items: center;
+    }
+     
+    input[type="radio"]:checked::before {
+        transform: scale(1);
+    }
+     
+    input[type="radio"]:disabled {
+        --form-control-color: var(--form-control-disabled);
+     
+        color: var(--form-control-disabled);
+        cursor: not-allowed;
+    }
+
+}
+
+.row-edit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .row-double,
 .row {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .row-double {
@@ -189,18 +301,27 @@ body {
 .button-edit {
     display: flex;
     justify-content: center;
+    flex-direction: center;
     align-items: center;
 
     button {
         background: #DAC5DA !important;
-        padding: 5px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        font-family: "Poppins", sans-serif;
+        font-size: 20px;
+        font-weight: 400;
         border-radius: 15px;
+        width: 90px;
+        height: 35px;
         color: #000;
-        transition: 0.5s;
+        border: none;
+        box-shadow: 4px 4px 4px 2px rgba(19, 19, 19, 0.541);
+        transition: ease-in-out, 0.3s;
         cursor: pointer;
 
         &:hover {
-            padding: 7px;
+            transform: scale(1.05);
         }
     }
 }

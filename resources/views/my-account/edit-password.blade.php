@@ -9,13 +9,13 @@
         <form name="edit-password-form" data-form-validate-fixed data-edit-account-password-form action="">
             <div class="edit">
                 <div class="row-double">
-                    <div class="row">
+                    <div class="row-password">
                         <span class="titulo-informacao">Senha Antiga:</span>
-                        <input class="value-input" data-required name="old_password" id="old_password" type="password" />
+                        <input class="value-input-passoword" data-required name="old_password" id="old_password" type="password" />
                     </div>
-                    <div class="row">
+                    <div class="row-password">
                         <span class="titulo-informacao">Nova Senha:</span>
-                        <input class="value-input" data-required name="new_password" id="new_password" type="password" />
+                        <input class="value-input-passoword" data-required name="new_password" id="new_password" type="password" />
                     </div>
                 </div>
                 <div class="button-edit">

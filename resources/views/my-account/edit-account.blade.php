@@ -9,23 +9,23 @@
         <form name="edit-account-form" data-form-validate-fixed data-edit-account-form action="">
             <input type="hidden" name="id" id="id" value="<?= $user->id ?>">
             <div class="edit">
-                <div class="row">
+                <div class="row-edit">
                     <div class="information">
-                        <span class="titulo-informacao">Nome:</span>
+                        <span class="titulo-informacao-edit">Nome:</span>
                         <input class="value-input" data-required name="name" id="name" type="text"
                             value="<?= $user->name ?>" />
                     </div>
                 </div>
-                <div class="row">
+                <div class="row-edit">
                     <div class="information">
-                        <span class="titulo-informacao">Email:</span>
+                        <span class="titulo-informacao-edit">Email:</span>
                         <input class="value-input" data-required data-email-validate name="email" id="email" type="text"
                             value="<?= $user->email ?>" />
                     </div>
                 </div>
-                <div class="row">
+                <div class="row-edit">
                     <div class="information">
-                        <span class="titulo-informacao">Tipo:</span>
+                        <span class="titulo-informacao-edit">Tipo:</span>
                         <div class="container-radio">
                             <div class="each-radio">
                                 <input type="radio" id="seller" <?= $user->type == 1 ? 'checked' : '' ?>
