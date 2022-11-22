@@ -34,7 +34,7 @@ class User extends Model
 
 	public function getUserByCredentials($email, $password)
 	{
-		return $this->treatUser(DB::select("SELECT * FROM users WHERE email LIKE :email AND password LIKE :password", ['email' => $email, 'password' => $password])[0]);
+		return $this->treatUser(User::where('email','like',$email)->where('password','like',$password)->first());
 	}
 
 	private function treatUser($user)

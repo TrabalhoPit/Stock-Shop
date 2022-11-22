@@ -18,9 +18,9 @@ class ProdutoController extends Controller
     {
         $user = session('user');
 
-        $data['isLoggedIn'] = !empty($user);
-
-        return view('home', $data);
+        $this->data['isLoggedIn'] = !empty($user);
+        $this->nameTemplate = "home";
+        return $this->renderController();
     }
 
     public function create()
@@ -35,18 +35,15 @@ class ProdutoController extends Controller
 
      public function criarProduto(ProductRequest $request)
     {
-        // dd('aqui');
-        $user = session('user');
-        $this->data['isLoggedIn'] = !empty($user);
-        $userObj = User::where('email','like',$user['email'])->where('password','like',$user['password'])->first();
+        $userSession = session('user');
+        $userObj = new User();
+        $user = $userObj->getUserByCredentials($userSession['email'], $userSession['password']);
 
         $this->dados = $request->validated();
 
         $produto = new Product();
-        // dd($this->dados);
         $produto->fill($this->dados);
-         // dd($produto);
-        $produto->seller_id = $userObj->id;
+        $produto->seller_id = $user->id;
 
         $produto->save();
         return response()->json(['success' => true, 'data' => $this->dados], 200);
