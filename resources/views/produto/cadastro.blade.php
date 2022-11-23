@@ -43,27 +43,27 @@
     <div class="information">
         <div class="containerLabel">
             <label class="textLabel">Nome do Produto:</label>
-            <input type="text" id="name" name="name" class="inputsInformationNome">
+            <input type="text" id="name" name="name" class="inputsInformationNome inputsForm">
         </div>
         <div class="containerLabel">
             <label class="textLabel">Quant. em Estoque:</label>
-            <input type="number" id="quantity" name="quantity" class="inputsInformationEstoque">
+            <input type="number" id="quantity" name="quantity" class="inputsInformationEstoque inputsForm">
         </div>
         <div class="containerLabel">
             <label class="textLabel">Marca do Produto:</label>
-            <input type="text" id="marca" name="marca" class="inputsInformationMarca" placeholder="Ex: Natura, Boticário, Eudora, etc...">
+            <input type="text" id="marca" name="marca" class="inputsInformationMarca inputsForm" placeholder="Ex: Natura, Boticário, Eudora, etc...">
         </div>
         <div class="containerLabel">
             <label class="textLabel">Categoria:</label>
-            <input type="text" id="category" name="category" class="inputsInformationCategoria">
+            <input type="text" id="category" name="category" class="inputsInformationCategoria inputsForm">
         </div>
         <div class="containerLabelValor">
             <label class="textLabel">Valor do Produto:</label>
-            <input type="number" id="price" name="price" class="inputsInformationValor">
+            <input type="number" id="price" name="price" class="inputsInformationValor inputsForm">
         </div>
         <div class="containerLabel">
             <label class="textLabel">Descrição:</label>
-            <input type="text" id="description" name="description"class="inputsInformationDescription">
+            <input type="text" id="description" name="description"class="inputsInformationDescription inputsForm">
         </div>
     </div>
 </form>
