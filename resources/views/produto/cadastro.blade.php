@@ -34,8 +34,11 @@
     <h1 class="textTitule">Cadastre seu <span class="textColor">Produto</span></h1>
     <div class="containerImageProduct">
         <div class="containerImage">
-            <img src="/assets/images/sabonete.jpg">
         </div>
+    </div>
+    <div class="divInputFile">
+        <label for="arquivo" class="inputFile">Escolha uma imagem</label>
+        <input type="file" id="arquivo">
     </div>
 </div>
 <div class="containerInformationProduct">
