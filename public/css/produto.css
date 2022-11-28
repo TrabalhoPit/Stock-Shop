@@ -7,25 +7,73 @@
 
 /*------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------*/
+/*RESPONSIVIDADE DA TELA*/
+@media screen and (max-width: 340px) {
+  .textInformation {
+    font-size: 20px !important;
+  }
+}
+@media screen and (max-width: 388px) {
+  .textTitule {
+    font-size: 25px !important;
+  }
+}
+@media screen and (max-width: 490px) {
+  .containerImageProduct {
+    height: 300px !important;
+    width: 300px !important;
+  }
+}
+@media screen and (max-width: 800px) {
+  .containerInput {
+    width: 100%;
+    margin-right: 35px;
+  }
+  .btnBuscar {
+    height: 5%;
+    width: 10%;
+    margin-top: -18px;
+  }
+  .inputs {
+    margin-top: 2px;
+    height: 20px;
+  }
+  .container-logo {
+    height: 20%;
+  }
+  .containers {
+    width: 100%;
+  }
+  .container-actions {
+    height: 30%;
+  }
+  .container-actions .dropdown-content {
+    bottom: -25%;
+  }
+}
+/*------------------------------------------------------------------------------------*/
 /*CONFIGURAÇÃO DA BARRA DE NAVEGAÇÃO*/
 .containerInicial {
   display: flex;
   height: 55px;
+  width: 100%;
 }
 
 .navBar {
   position: absolute;
   width: 100%;
+  right: 0;
+  left: 0;
   background: #DAC5DA !important;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
   -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: row;
   background: transparent;
-  height: 55px;
+  height: 7%;
   color: white;
 }
 
@@ -62,11 +110,11 @@
 .containerInput {
   background-color: whitesmoke;
   border: solid 2px white;
+  height: 100%;
   border-radius: 7px 7px 7px 7px;
 }
 
 .container-input {
-  height: 100%;
   width: 60%;
   display: flex;
   justify-content: center;
@@ -173,6 +221,19 @@
   align-items: center;
 }
 
+.inputsForm {
+  border-radius: 5px;
+  width: 100%;
+  border-radius: 5px;
+  margin: 25px 0 15px 0;
+  transition: 0.5s;
+  border: solid #DAC5DA 2px;
+}
+.inputsForm:focus-visible {
+  outline: none;
+  border-color: #a37ea3;
+}
+
 .textTitule {
   font-family: "Poppins", sans-serif;
   font-size: 35px;
@@ -190,16 +251,74 @@
   align-items: center;
   height: 450px;
   width: 465px;
-  /* border: solid black 2px; */
+  box-shadow: 4px 4px 5px 3px rgba(0, 0, 0, 0.49);
+  border-radius: 15px;
   margin-top: 20px;
 }
 
 .containerImage {
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
   overflow-y: hidden;
-  /* border: solid red 1px; */
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.49));
+  height: 100%;
+  width: 100%;
+}
+
+input[type=file] {
+  display: none;
+}
+
+.divInputFile {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.inputFile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
   border-radius: 15px;
-  height: 430px;
+  border: solid #BC93BC 2px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.49));
+  background-color: #BC93BC;
+  padding: 10px;
+  transition: 0.5s;
+}
+
+.inputFile:hover {
+  transition: 0.5s;
+  height: 30px;
+  width: 225px;
+  font-size: 20px;
+  border: solid #BC93BC 2px;
+  background-color: white;
+  color: black;
+}
+
+.imageBtnEdit {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.btnEdit {
+  display: flex;
+  -o-object-fit: contain;
+     object-fit: contain;
+  position: absolute;
+  bottom: 0;
+  height: 15%;
+  background: none;
+  border: none;
+  width: 15%;
 }
 
 .containerInformationProduct {
@@ -218,6 +337,7 @@
 
 .information {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 
@@ -237,7 +357,7 @@
 
 .inputsInformationNome {
   margin-top: 5px;
-  width: 115vh;
+  width: 100%;
   height: 10px;
   padding-left: 5px;
   padding-top: 5px;
@@ -246,7 +366,7 @@
 
 .inputsInformationEstoque {
   margin-top: 5px;
-  width: 55vh;
+  width: 50%;
   height: 10px;
   padding-left: 5px;
   padding-top: 5px;
@@ -255,7 +375,7 @@
 
 .inputsInformationMarca {
   margin-top: 5px;
-  width: 60vh;
+  width: 100%;
   height: 10px;
   padding-left: 5px;
   padding-top: 5px;
@@ -264,7 +384,7 @@
 
 .inputsInformationCategoria {
   margin-top: 5px;
-  width: 25vh;
+  width: 100%;
   height: 10px;
   padding-left: 5px;
   padding-top: 5px;
@@ -281,16 +401,17 @@
 
 .inputsInformationValor {
   margin-top: 5px;
-  width: 60vh;
+  width: 100%;
   height: 10px;
   padding-left: 5px;
   padding-top: 5px;
   padding-bottom: 5px;
+  padding-right: 10px;
 }
 
 .inputsInformationDescription {
   margin-top: 5px;
-  width: 175vh;
+  width: 100%;
   height: 10vh;
   padding-left: 5px;
   padding-top: 5px;
@@ -352,26 +473,4 @@
   font-size: 25px;
   font-weight: 400;
   transition: 0.5s;
-}
-
-/*------------------------------------------------------------------------------------*/
-@media only screen and (max-width: 792px) {
-  .navBar {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    height: 30%;
-  }
-  .container-logo {
-    height: 20%;
-  }
-  .containers {
-    width: 100%;
-  }
-  .container-actions {
-    height: 30%;
-  }
-  .container-actions .dropdown-content {
-    bottom: -25%;
-  }
 }
