@@ -414,8 +414,8 @@ body {
   .navBar {
     display: grid;
     grid-template-areas:
-      'input input'
-      'logo actions';
+      'logo actions'
+      'input input';
       gap: 10px;
     height: 25%;
     grid-template-columns: 1fr 1fr;

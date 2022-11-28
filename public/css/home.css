@@ -398,7 +398,7 @@ body {
 @media only screen and (max-width: 792px) {
   .navBar {
     display: grid;
-    grid-template-areas: "input input" "logo actions";
+    grid-template-areas: "logo actions" "input input";
     gap: 10px;
     height: 25%;
     grid-template-columns: 1fr 1fr;
