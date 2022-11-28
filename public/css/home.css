@@ -348,7 +348,7 @@ body {
 .container-actions .dropdown-content {
   background-color: white;
   position: absolute;
-  bottom: -80%;
+  bottom: -110%;
   border-radius: 10px;
   padding: 5px;
   display: none;
@@ -411,7 +411,7 @@ body {
     height: 80%;
   }
   .container-actions .dropdown-content {
-    bottom: -24%;
+    bottom: 16%;
   }
   .container-logo {
     grid-area: logo;

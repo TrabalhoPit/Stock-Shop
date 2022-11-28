@@ -23,6 +23,7 @@
             </div>
             <div class="dropdown-content">
                 <a href="{{ route('myAccount.details') }}" class="action-account">Minha Conta</a>
+                <?= $user->type == 1 ?'<a href="{{ route("produto.create") }}" class="action-account">Criar Produto</a>' : '' ?>
                 <a href="#" data-leave-account class="action-account">Sair</a>
             </div>
             <?php } ?>
